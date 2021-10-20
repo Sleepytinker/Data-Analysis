@@ -30,3 +30,4 @@ merge_movies['director_split'] = merge_movies['director_split'].str.lstrip(' ').
 new_df= merge_movies.groupby('director_split').agg({ 'imdb_title_id' : ['count'], 'avg_vote': ['mean']})
 new_df.drop(new_df[new_df.index == 'nan'].index, inplace = True)
 print(new_df.head(10))
+ 
